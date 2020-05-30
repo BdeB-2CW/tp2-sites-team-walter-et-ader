@@ -22,7 +22,7 @@ fetch(URL)
 
       if(membres.membre_id === 420){
         for(var i = 1; i < elements.length - 1; i++){
-          let element = elements[i];
+          let elementCourant = elements[i];
           let li = createNode("li"),
             p = createNode("p");
             img = createNode("img");
@@ -31,7 +31,7 @@ fetch(URL)
             img.style="width: 400%; height: 1px";
             img.alt="Ligne Horizonatle";
             p.style="font-size: 30px; margin-bottom: 1px";
-          p.innerHTML = nom_elements[i - 1] + `${element}`;
+          p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;
           
           append(li, p);
           append(li, img);
