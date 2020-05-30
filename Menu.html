@@ -39,7 +39,7 @@ a {
 .menu:hover {
 	background-color: rgba(255,255,255,0.075);
 }	
-input[type=text] {
+input {
 	font-family: Microsoft Yi Baiti;
 	font-style: italic;
 	font-size: 25px;
@@ -77,10 +77,57 @@ input[type=text] {
     </div>
 	
 	<div>
-		<p style="position: fixed; left: 700px; top: 20%; font-size: 40px; ">Membre?</p>
-		<p style="position: fixed; left: 1100px; top: 20%; font-size: 40px; ">Nouveau?</p>
+		<p style="position: fixed; left: 650px; top: 20%; font-size: 40px; ">Membre?</p>
       <input 
-		style="position: absolute; left: 1000px; top: 30%; "
+		style="position: absolute; left: 530px; top: 32%; "
+		placeholder="email"
+        type="text"
+        id="s_email"
+        name="s_email"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />	
+		<input 
+		style="position: absolute; left: 530px; top: 40%; "
+		placeholder="mot de passe"
+        type="password"
+        id="s_mdp"
+        name="s_mdp"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />
+		
+		<img style="position: fixed; left: 950px; top: 30%; height: 200%; width: 1px" src="images/line.png" alt="Line grise"/>
+		
+		<p style="position: fixed; left: 1100px; top: 20%; font-size: 40px; ">Nouveau?</p>
+		<input 
+		style="position: absolute; left: 1000px; top: 32%; width: 9%"
+		placeholder="nom"
+        type="text"
+        id="nom"
+        name="nom"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />
+		<input 
+		style="position: absolute; left: 1210px; top: 32%; width: 9%"
+		placeholder="nom"
+        type="text"
+        id="prenom"
+        name="prenom"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />
+      <input 
+		style="position: absolute; left: 1000px; top: 40%; "
 		placeholder="Addresse"
         type="text"
         id="ville"
@@ -91,7 +138,7 @@ input[type=text] {
         size="15"
       />
 		<input 
-		style="position: absolute; left: 1000px; top: 40%; "
+		style="position: absolute; left: 1000px; top: 53%; "
 		placeholder="email"
         type="text"
         id="email"
@@ -102,7 +149,7 @@ input[type=text] {
         size="15"
       />
 		<input 
-		style="position: absolute; left: 1000px; top: 50%; "
+		style="position: absolute; left: 1000px; top: 60%; "
 		placeholder="mot de passe"
         type="password";
         id="mdp"
