@@ -2,7 +2,6 @@ function ins_membre() {
   let membr_rec = {
     points: 0,
   };
-  vide=false;
   membr_rec.membre_id =Math.floor((Math.random() * 9998) + 1);
   membr_rec.nom = document.getElementById("nom").value;
   membr_rec.prenom = document.getElementById("prenom").value;
