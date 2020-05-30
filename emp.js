@@ -15,18 +15,25 @@ fetch(URL)
   .then((resp) => resp.json())
   .then(function (data) {
     let membres = data.items; //.results;
-    let elements = 
-    [membres.membre_id, membres.nom, membres.prenom, membres.ville, membres.mot_de_passe, membres.points];
     return membres.map(function (membres) {
+      let nom_elements = ["Nom: ", "Prénom: ", "Ville: ", "Email: ", "Mot de passe: "];
+      let elements = 
+    [membres.membre_id, membres.nom, membres.prenom, membres.ville, membres.email, membres.mot_de_passe, membres.points];
+
       if(membres.membre_id === 420){
-        for(var i = 1; i < elements.length; i++){
+        for(var i = 1; i < elements.length - 1; i++){
+          let element = elements[i];
           let li = createNode("li"),
-            span = createNode("span");
+            p = createNode("p");
             img = createNode("img");
-            img.innerHTML = "<img class=\"lingneHor\" src=\"images/line2.png\" alt=\"Line Horizontale\"/>"
-          span.innerHTML = `${whos}`;
+            
+            img.src="images/line2.png";
+            img.style="width: 400%; height: 1px";
+            img.alt="Ligne Horizonatle";
+            p.style="font-size: 30px; margin-bottom: 1px";
+          p.innerHTML = nom_elements[i - 1] + `${element}`;
           
-          append(li, span);
+          append(li, p);
           append(li, img);
           append(ul, li);
       }
