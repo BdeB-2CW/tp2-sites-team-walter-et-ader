@@ -8,6 +8,8 @@ function append(parent, el) {
 
 
 const ul = document.getElementById("information");
+const pts = document.getElementById("points");
+
 //const url = "http://localhost:8080/ords/hr2/employees";
 const URL =
 "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre/"
@@ -21,6 +23,10 @@ fetch(URL)
     [membres.membre_id, membres.nom, membres.prenom, membres.ville, membres.email, membres.mot_de_passe, membres.points];
 
       if(membres.membre_id === 420){
+        pointage = createNode("span");
+        pointage.innerHTML = membres.points;
+        append(pts, pointage);
+
         for(var i = 1; i < elements.length - 1; i++){
           let elementCourant = elements[i];
           let li = createNode("li"),
