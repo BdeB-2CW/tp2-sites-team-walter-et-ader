@@ -14,7 +14,7 @@ if(membr_rec.nom===""||membr_rec.prenom===""||membr_rec.Ville===""||membr_rec.em
 }else{
 
   const URL =
-    "Access-Control-Allow-Origin:https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/tp2/membre";
+    "Access-Control-Allow-Origin: https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre";
 
   fetch(URL, {
     method: "POST",
