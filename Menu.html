@@ -38,6 +38,18 @@ a {
 }
 .menu:hover {
 	background-color: rgba(255,255,255,0.075);
+}	
+input[type=text] {
+	font-family: Microsoft Yi Baiti;
+	font-style: italic;
+	font-size: 25px;
+  width: 20%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
 }		
 	</style>
     <meta charset="UTF-8">
@@ -67,7 +79,39 @@ a {
 	<div>
 		<p style="position: fixed; left: 700px; top: 20%; font-size: 40px; ">Membre?</p>
 		<p style="position: fixed; left: 1100px; top: 20%; font-size: 40px; ">Nouveau?</p>
-		
+      <input 
+		style="position: absolute; left: 1000px; top: 30%; "
+		placeholder="Addresse"
+        type="text"
+        id="ville"
+        name="ville"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />
+		<input 
+		style="position: absolute; left: 1000px; top: 40%; "
+		placeholder="email"
+        type="text"
+        id="email"
+        name="email"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />
+		<input 
+		style="position: absolute; left: 1000px; top: 50%; "
+		placeholder="mot de passe"
+        type="password";
+        id="mdp"
+        name="mdp"
+        required
+        minlength="4"
+        maxlength="20"
+        size="15"
+      />
 	</div>
 	
     <!--Footer-->
