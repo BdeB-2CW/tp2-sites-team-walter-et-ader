@@ -1,3 +1,8 @@
+/**
+ * Script affichant les informations du membre
+ * 
+ */
+
 function createNode(element) {
   return document.createElement(element);
 }
@@ -10,13 +15,12 @@ function append(parent, el) {
 const ul = document.getElementById("information");
 const pts = document.getElementById("points");
 
-//const url = "http://localhost:8080/ords/hr2/employees";
 const URL =
   "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre/"
 fetch(URL)
   .then((resp) => resp.json())
   .then(function (data) {
-    let membres = data.items; //.results;
+    let membres = data.items; //Résultat
     return membres.map(function (membres) {
       let nom_elements = ["Nom: ", "Prénom: ", "Ville: ", "Email: ", "Mot de passe: "];
       let elements =
@@ -24,7 +28,7 @@ fetch(URL)
 
       if (membres.membre_id === 420) {
         pointage = createNode("span");
-        pointage.innerHTML = membres.points;
+        pointage.innerHTML = membres.points;//Retourne le pointage associé a l'id membre
         append(pts, pointage);
 
         for (var i = 1; i < elements.length - 1; i++) {
@@ -37,7 +41,7 @@ fetch(URL)
           img.style = "width: 400%; height: 1px";
           img.alt = "Ligne Horizonatle";
           p.style = "font-size: 30px; margin-bottom: 1px";
-          p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;
+          p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;//Répartit les éléments a afficher
 
           append(li, p);
           append(li, img);

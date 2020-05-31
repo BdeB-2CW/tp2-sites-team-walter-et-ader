@@ -17,9 +17,9 @@ fetch(URL)
     .then(function (data) {
         let vue = data.items; //.results;
         return vue.map(function (vue) {
-            let nom_elements = ["Pizza: ", "Garniture: ", "Configuration: "];
+            let nom_elements = ["Pizza: ", "Garniture: ", "Configuration: "];//Structure d'affichage
             let elements =
-                [vue.pizza_id, vue.g_nom, vue.emplacement, vue.quantité];
+                [vue.pizza_id, vue.g_nom, vue.emplacement, vue.quantité];//Éléments a afficher
 
             numero = createNode("span");
             const URL =
@@ -27,10 +27,10 @@ fetch(URL)
             fetch(URL)
                 .then((resp) => resp.json())
                 .then(function (data) {
-                    let commande = data.items; //.results;
+                    let commande = data.items; //Resultats
                     return commande.map(function (commande) {
                         if (document.getCookie() == commande.membre_membre_id) {
-                            numero.innerHTML = commande.commande_id;
+                            numero.innerHTML = commande.commande_id;//Retourne l'id commande correspondant a l'id du membre
                         }
                         append(id, numero);
                     });
@@ -50,7 +50,7 @@ fetch(URL)
                 img.style = "width: 400%; height: 1px";
                 img.alt = "Ligne Horizonatle";
                 p.style = "font-size: 30px; margin-bottom: 1px";
-                p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;
+                p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;//Répartit les éléments a afficher
 
                 append(li, p);
                 append(li, img);

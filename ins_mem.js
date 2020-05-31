@@ -1,14 +1,18 @@
+/**
+ * Script d'insertion des informations du membre
+ * créé par Ader
+ */
 function ins_membre() {
   let membr_rec = {
     points: 0,
   };
-  membr_rec.membre_id = Math.floor((Math.random() * 9998) + 1);
+  membr_rec.membre_id = Math.floor((Math.random() * 9998) + 1);//Génère une id aleatoire
   membr_rec.nom = document.getElementById("nom").value;
   membr_rec.prenom = document.getElementById("prenom").value;
   membr_rec.ville = document.getElementById("ville").value;
   membr_rec.email = document.getElementById("email").value;
   membr_rec.mot_de_passe = document.getElementById("mdp").value;
-  setCookie(membr_rec.email, membr_rec.membre_id);
+  setCookie(membr_rec.email, membr_rec.membre_id);//Crée un cookie contenant l'address courriel et l'id du membre
   //Afficher un message d'alerte si une des cases sont vides, sinon, envoie les données vers la BD
   if (membr_rec.nom === "" || membr_rec.prenom === "" || membr_rec.Ville === "" || membr_rec.email === "" || membr_rec.mot_de_passe === "") {
     alert("Veuillez bien remplir les cases!!");

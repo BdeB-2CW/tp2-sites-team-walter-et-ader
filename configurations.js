@@ -1,3 +1,8 @@
+/**
+ * Script d'insertion des données de configuration des pizzas
+ *  créé par Walter
+ * 
+ */
 function createNode(element) {
   return document.createElement(element);
 }
@@ -12,27 +17,27 @@ const imgPizza = document.getElementById("imagePizza");
 let config_id1;
 let config_id2;
 conf = document.getElementById("conf1");
-//const URL = "http://localhost:8080/ords/hr2/employees"; si la bd est locale
+//Accède a la vue de la BD contenant les tables pizza, configuration et garniture
 const URL =
   "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/piz_vue/"
 fetch(URL)
   .then((resp) => resp.json())
   .then(function (data) {
-    let piz_vue = data.items; //.results;
+    let piz_vue = data.items; //Résultats
     config_id1 = piz_vue.config_id;
-    config_id2 = config_id1 + 1;
+    config_id2 = config_id1 + 1;//Prend 2 id
     return piz_vue.map(function (pizza) {
 
-      let noms = ["Garnitures: ", "Emplacement: ", "Quantité :"]
-      let elements = [pizza.g_nom, pizza.emplacement, pizza.quantité]
-      if (pizza.pizza_id === 685) {
+      let noms = ["Garnitures: ", "Emplacement: ", "Quantité :"]//Structure d'affichage
+      let elements = [pizza.g_nom, pizza.emplacement, pizza.quantité]//Éléments a afficher
+      if (pizza.pizza_id === 685) {//Test avec un seul id de pizza
         imgPizza.src = `${pizza.source_image}`;
         nomPizza.innerHTML = `${pizza.p_nom}`;
         for (var i = 0; i < noms.length; i++) {
           li = createNode("li");
           h2 = createNode("h2");
 
-          h2.innerHTML = noms[i] + `${elements[i]}`
+          h2.innerHTML = noms[i] + `${elements[i]}`//Répartit l'affichage avec boucle for
 
           append(li, h2);
           append(conf, li);
@@ -59,12 +64,12 @@ function genericName(number) {
   let commande_rec = {};
 
 alert(config_id1);
-if(boolean){
+if(boolean){//Détermine le config_id a donner a l'entrée de commande
   configID = config_id1;
 } else {
   configID = config_id2;
 }
-let commande_rec = {};
+let commande_rec = {};//Créé une entrée commande
 
   commande_rec.membre_membre_id = 420;
   commande_rec.commande_id = 20;
@@ -75,7 +80,7 @@ let commande_rec = {};
   const URL2 =
     "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/commande/"
 
-  fetch(URL2, {
+  fetch(URL2, {//Envoi la commande ver la table commande
     method: "POST",
     headers: {
       "Content-Type": "application/json",
