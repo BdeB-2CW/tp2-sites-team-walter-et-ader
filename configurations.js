@@ -28,6 +28,7 @@ fetch(URL)
       if(pizza.pizza_id === 685){   
                                     imgPizza.src = `${pizza.source_image}`;
                                     nomPizza.innerHTML = `${pizza.p_nom}`;
+
                                     for(var i = 0; i < noms.length; i++){
                                       li = createNode("li");
                                       h2 = createNode("h2");
@@ -46,20 +47,24 @@ fetch(URL)
     console.log(JSON.stringify(error));
   });
 
+config_id1 = 1;
+config_id2 = 2;
 
 
-
-function genericName(number){
-  alert('Bon');
-
-
+function genericName(boolean){
 let configID;
+
+alert(config_id1);
+if(boolean){
+  configID = config_id1;
+} else {
+  configID = config_id2;
+}
 let commande_rec = {};
 
-
 commande_rec.membre_membre_id = 420;
-commande_rec.commande_id = 20;
-commande_rec.configuration_config_id = number;
+commande_rec.commande_id = 254;
+commande_rec.configuration_config_id = configID;
 
 
 
@@ -80,4 +85,6 @@ commande_rec.configuration_config_id = number;
     .catch(function (error) {
       console.log(JSON.stringify(error));
     });
+
+
   }
