@@ -1,5 +1,5 @@
 function setCookie(email, membre_id) {
-    document.cookie = membre_id + ";" + email ;
+    document.cookie = membre_id + ";" + email;
 }
 
 function getCookie() {
@@ -28,5 +28,5 @@ function checkCookie() {
         .catch(function (error) {
             console.log(JSON.stringify(error));
         });
-    }
+}
 ;

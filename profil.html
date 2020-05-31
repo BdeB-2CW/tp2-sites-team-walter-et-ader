@@ -1,98 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<style>
-html {
-    background-image: url("./images/backping.png");
-    background-size: 100%;
-    overflow: hidden;
-    font-family: Microsoft Yi Baiti;
-}
-.footer {
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 100%;
-    height: 80px;
-    background-color: black;
-    color: hotpink;
-}
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background-color: rgb(180, 86, 243);
-    font-size: 35px;
-}
-a {
-    color: #000000;
-    text-decoration: none; /* no underline */
-}
-.menu:hover {
-    background-color: rgba(255,255,255,0.075);
-}
-input {
-    font-style: italic;
-    font-size: 25px;
-    width: 20%;
-    padding: 10px 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    box-sizing: border-box;
-}
-ul {
-    list-style-type: none;
-}
-</style>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-</head>
-<body>
-<img class="lingneHor" src="images/line2.png" alt="Line Horizontale"/>
-<div class="header"> <a href="../../tp2/index.html" title="Accueuil"><img style="float: left; margin-left: 20px" width="100px"
-                src="./images/ReaperMus.png" alt="Logo Reaper"></a>
-  <p style="float:left; margin-top: 15px; margin-left: 40px;">REAPER PIZZERIA</p>
-  <table height="70" width="900" border="0" align="center" style="margin-top:  -1px">
-    <tbody align="center">
-      <tr>
-        <td style="background-color: rgba(255,255,255,0.08)" width="110"><a href="../../tp2/index.html" title="Accueuil">ACCUEUIL</a></td>
-        <td class="menu" width="120"><a href="../../tp2/menu.html" title="Menu">MENU</a></td>
-        <td class="menu" width="10"><a href="../../tp2/stats.html" title="Roster">STATISTIQUES</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <a href="../../tp2/index.html" title="Accueuil"><img style="float: right; margin-top: -77px; margin-right: 50px" width="90px"
-                src="./images/profil.png" alt="Image profil"></a> <a href="../../tp2/index.html" title="Accueuil"><img style="float: right; margin-top: -73px; margin-right: 30px" width="80px"
-                src="./images/commande.png" alt="Image panier"></a> </div>
-	
-<p style="position: fixed; left: 400px;font-size: 100px">Profil:</p>
-<div id="points" style="width: 200px; position: fixed; left: 1250px;top: 20%;font-size: 50px;"> <span>Points:</span> </div>
-<div style="position: fixed; left: 400px; top: 30%">
-  <ul id="information">
-  </ul>
-</div>
-<script src="infos_profil.js"></script> 
 
-<!--Footer-->
-<div class="footer">
-  <table align="center" style="margin-top: 13px" width="400" border="0">
-    <tbody>
-      <tr align="center">
-        <td class="grad2"><a href="https://www.facebook.com/esports.reapers/" target="_blank"> <img
-                                src="./images/FBLogo.png" width="50px" alt="Facebook"></a></td>
-        <td class="grad2"><a href="https://twitter.com/ReaperEsports10" target="_blank"> <img
-                                src="./images/TWLogo.png" width="50px" alt="Twitter"></a></td>
-        <td class="grad2"><a href="https://www.instagram.com/reaperesportsteam/?hl=fr-ca" target="_blank"> <img src="./images/IGLogo.png" width="50px" alt="Instagram"></a></td>
-        <td class="grad2"><a href="https://www.youtube.com/channel/UCquwA8hiup6zIerKdDUi-YQ"
-                            target="_blank"> <img src="./images/YTLogo.png" width="50px" alt="YouTube"></a></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<head>
+  <style>
+    html {
+      background-image: url("./images/backping.png");
+      background-size: 100%;
+      overflow: hidden;
+      font-family: Microsoft Yi Baiti;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 100%;
+      height: 80px;
+      background-color: black;
+      color: hotpink;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: rgb(180, 86, 243);
+      font-size: 35px;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: none;
+      /* no underline */
+    }
+
+    .menu:hover {
+      background-color: rgba(255, 255, 255, 0.075);
+    }
+
+    input {
+      font-style: italic;
+      font-size: 25px;
+      width: 20%;
+      padding: 10px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img class="lingneHor" src="images/line2.png" alt="Line Horizontale" />
+  <div class="header"> <a href="./index.html" title="Accueuil"><img style="float: left; margin-left: 20px" width="100px"
+        src="./images/ReaperMus.png" alt="Logo Reaper"></a>
+    <p style="float:left; margin-top: 15px; margin-left: 40px;">REAPER PIZZERIA</p>
+    <table height="70" width="900" border="0" align="center" style="margin-top:  -1px">
+      <tbody align="center">
+        <tr>
+          <td width="110"><a href="./index.html" title="Accueuil">ACCUEUIL</a></td>
+          <td class="menu" width="120"><a href="./Menu.html" title="Menu">MENU</a></td>
+          <td class="menu" width="10"><a href="./stats.html" title="Stats">STATISTIQUES</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="./profil.html" title="Profil"><img style="float: right; margin-top: -77px; margin-right: 50px" width="90px"
+        src="./images/profil.png" alt="Image profil"></a> <a href="./commande.html" title="Commande"><img
+        style="float: right; margin-top: -73px; margin-right: 30px" width="80px" src="./images/commande.png"
+        alt="Image panier"></a>
+  </div>
+  <p style="position: fixed; left: 400px;font-size: 100px">Profil:</p>
+  <div id="points" style="width: 200px; position: fixed; left: 1250px;top: 20%;font-size: 50px;"> <span>Points:</span>
+  </div>
+  <div style="position: fixed; left: 400px; top: 30%">
+    <ul id="information">
+    </ul>
+  </div>
+  <script src="infos_profil.js"></script>
+
+  <!--Footer-->
+  <div class="footer">
+    <table align="center" style="margin-top: 13px" width="400" border="0">
+      <tbody>
+        <tr align="center">
+          <td class="grad2"><a href="https://www.facebook.com/esports.reapers/" target="_blank"> <img
+                src="./images/FBLogo.png" width="50px" alt="Facebook"></a></td>
+          <td class="grad2"><a href="https://twitter.com/ReaperEsports10" target="_blank"> <img
+                src="./images/TWLogo.png" width="50px" alt="Twitter"></a></td>
+          <td class="grad2"><a href="https://www.instagram.com/reaperesportsteam/?hl=fr-ca" target="_blank"> <img
+                src="./images/IGLogo.png" width="50px" alt="Instagram"></a></td>
+          <td class="grad2"><a href="https://www.youtube.com/channel/UCquwA8hiup6zIerKdDUi-YQ" target="_blank"> <img
+                src="./images/YTLogo.png" width="50px" alt="YouTube"></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
+
 </html>
