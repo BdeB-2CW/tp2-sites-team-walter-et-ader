@@ -22,7 +22,9 @@ function checkCookie() {
             return membre.map(function (membre) {
                 if (membre_cooki != membre.membre_id) {
                     alert("Veuillez vous enregistrer avant de continuer.");
-                    window.location.href = "../../tp2/profil.html";
+                    window.location.href = "../../tp2/login.html";
+                }else{
+                    return membre_cooki
                 }
             });
         })
