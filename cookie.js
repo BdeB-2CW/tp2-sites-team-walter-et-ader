@@ -24,7 +24,7 @@ function checkCookie() {//Verifie si l'id existe dans la BD
             return membre.map(function (membre) {
                 if (membre_email != membre.email) {
                     alert("Veuillez vous enregistrer avant de continuer.");
-                    window.location.href = "../../tp2/login.html";
+                    window.location.href = "./login.html";
                 } else {
                     return membre.membre_id;
                 }
