@@ -14,7 +14,7 @@ function ins_membre() {
   }else{
   
     const URL =
-      "Access-Control-Allow-Origin: https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre";
+    "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre/"
   
     fetch(URL, {
       method: "POST",
@@ -30,6 +30,5 @@ function ins_membre() {
       .catch(function (error) {
         console.log(JSON.stringify(error));
       });
-    }
   }
-  
+} 
