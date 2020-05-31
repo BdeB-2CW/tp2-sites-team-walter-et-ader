@@ -8,6 +8,7 @@ function ins_membre() {
     membr_rec.ville = document.getElementById("ville").value;
     membr_rec.email = document.getElementById("email").value;
     membr_rec.mot_de_passe = document.getElementById("mdp").value;
+    setCookie(membre_rec.email, membr_rec.membre_id);
     //Afficher un message d'alerte si une des cases sont vides, sinon, envoie les données vers la BD
   if(membr_rec.nom===""||membr_rec.prenom===""||membr_rec.Ville===""||membr_rec.email===""||membr_rec.mot_de_passe===""){
     alert("Veuillez bien remplir les cases!!");
