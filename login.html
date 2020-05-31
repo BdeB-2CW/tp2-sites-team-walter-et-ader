@@ -54,15 +54,15 @@ input {
 <title>Document</title>
 </head>
 <body>
-<div class="header"> <a href="../../tp2/index.html" title="Accueuil"><img style="float: left; margin-left: 20px" width="100px"
+<div class="header"> <a href="./index.html" title="Accueuil"><img style="float: left; margin-left: 20px" width="100px"
                 src="./images/ReaperMus.png" alt="Logo Reaper"></a>
   <p style="float:left; margin-top: 15px; margin-left: 40px;">REAPER PIZZERIA</p>
   <table height="70" width="900" border="0" align="center" style="margin-top:  -1px">
     <tbody align="center">
       <tr>
-        <td style="background-color: rgba(255,255,255,0.08)" width="110"><a href="../../tp2/index.html" title="Accueuil">ACCUEUIL</a></td>
-        <td class="menu" width="120"><a href="../../tp2/menu.html" title="Menu">MENU</a></td>
-        <td class="menu" width="10"><a href="../../tp2/stats.html" title="Roster">STATISTIQUES</a></td>
+        <td width="110"><a href="./index.html" title="Accueuil">ACCUEUIL</a></td>
+        <td class="menu" width="120"><a href="./Menu.html" title="Menu">MENU</a></td>
+        <td class="menu" width="10"><a href="./stats.html" title="Roster">STATISTIQUES</a></td>
       </tr>
     </tbody>
   </table>
@@ -94,7 +94,7 @@ input {
         maxlength="20"
         size="15"
       />
-      <input id="clickMe" type="button" value="Insérer" onclick="setCookie(document.checkLogin(s_email))" style="position: absolute; left: 530px; top: 50%;" />
+      <input id="clickMe" type="button" value="Insérer" onclick="setCookie(checkLogin(s_email))" style="position: absolute; left: 530px; top: 50%;" />
       <!--Enregistrement-->
   <img style="position: fixed; left: 950px; top: 30%; height: 200%; width: 1px" src="images/line.png" alt="Line grise"/>
   <p  style="position: fixed; left: 1100px; top: 20%; font-size: 40px; " >Nouveau?</p>
@@ -154,7 +154,7 @@ input {
         maxlength="20"
         size="15"
       />
-      <input id="clickMe"  style="position: absolute; left: 1000px; top: 70%;" type="button" value="Insérer" onclick="ins_membre();" />
+      <input id="submit"  style="position: absolute; left: 1000px; top: 70%;" type="button" value="Insérer" onsubmit="ins_membre();" />
       <script src="ins_mem.js"></script>
 </div>
 
@@ -175,5 +175,6 @@ input {
   </table>
 </div>
 <script src="cookie.js"></script>
+<script src="login.js"></script>
 </body>
 </html>

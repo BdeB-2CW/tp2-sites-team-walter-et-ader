@@ -1,15 +1,5 @@
-function setCookie(email, membre_id) {
-    document.cookie = membre_id + ";" + email ;
-}
-
-function getCookie() {
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedcookie.split(';');
-    return ca[0];
-}
-
-function checkCookie() {
-    var membre_email = getCookie();
+function checkLogin(s_email) {
+    var membre_email = s_email;
     const URL =
         "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre/"
     fetch(URL)
@@ -28,5 +18,6 @@ function checkCookie() {
         .catch(function (error) {
             console.log(JSON.stringify(error));
         });
-    }
-;
+
+
+}
