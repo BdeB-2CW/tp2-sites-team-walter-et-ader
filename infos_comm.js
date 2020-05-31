@@ -21,7 +21,6 @@ function createNode(element) {
         let elements = 
       [vue.pizza_id, vue.g_nom, vue.emplacement, vue.quantité];
   
-        if(vue.membre_id === 420){
             numero = createNode("span");
           const URL =
           "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/commande/"
@@ -30,7 +29,9 @@ function createNode(element) {
             .then(function (data) {
               let commande = data.items; //.results;
               return commande.map(function (commande) {
+                  if(document.getCookie()==commande.membre_membre_id){
                 numero.innerHTML = commande.commande_id;
+            }
                 append(id, numero);
               });
             })
@@ -55,7 +56,7 @@ function createNode(element) {
             append(li, img);
             append(ul, li);
         }
-        }
+        
       });
     })
     .catch(function (error) {

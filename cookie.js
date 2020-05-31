@@ -1,18 +1,15 @@
-function setCookie(membre_id) {
-    var d = new Date();
-    d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie =  cvalue + ";" + expires + ";path=/";
+function setCookie(email, membre_id) {
+    document.cookie = cvalue + ";" + email ;
 }
 
-function getCookie(membre_id) {
-    var nom = membre_id + "=";
-    var ca = document.cookie.split(';');
+function getCookie() {
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedcookie.split(';');
     return ca[0];
 }
 
 function checkCookie() {
-    var membre_cooki = getCookie("membre_id");
+    var membre_email = getCookie();
     const URL =
         "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre/"
     fetch(URL)
@@ -20,17 +17,38 @@ function checkCookie() {
         .then(function (data) {
             let membre = data.items; //.results;
             return membre.map(function (membre) {
-                if (membre_cooki != membre.membre_id) {
+                if (membre_email != membre.email) {
                     alert("Veuillez vous enregistrer avant de continuer.");
                     window.location.href = "../../tp2/login.html";
-                }else{
-                    return membre_cooki
+                } else {
+                    return membre.membre_id;
                 }
             });
         })
         .catch(function (error) {
             console.log(JSON.stringify(error));
         });
+
+        function checkLogin(s_email) {
+            var membre_email = s_email;
+            const URL =
+                "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/membre/"
+            fetch(URL)
+                .then((resp) => resp.json())
+                .then(function (data) {
+                    let membre = data.items; //.results;
+                    return membre.map(function (membre) {
+                        if (membre_email != membre.email) {
+                            alert("Veuillez vous enregistrer avant de continuer.");
+                            window.location.href = "../../tp2/login.html";
+                        } else {
+                            return membre.membre_id;
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    console.log(JSON.stringify(error));
+                });
 
 
 }
