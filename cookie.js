@@ -6,13 +6,9 @@ function setCookie(name,value) {//Génère cookie
 	document.cookie = name+"="+value+""+"; path=/";
 }
 
-function getCookie(index) {//Retourn l'id du membre préservé dans le cookie 0:id ; 1:email ; 2:detail
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedcookie.split(';');
-    return ca[index];
-}
 
-function readCookie(name) {
+
+function readCookie(name) {//Retourne la valeur du cookie
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
 	for(var i=0;i < ca.length;i++) {
