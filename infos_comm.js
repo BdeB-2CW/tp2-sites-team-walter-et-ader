@@ -18,7 +18,7 @@ fetch(URL)
     .then(function (data) {
         let vue = data.items; //.results;
         return vue.map(function (vue) {
-            if(premier){
+            if(vue.config_id === Number(readCookie("config ID"))){
             let nom_elements = ["Pizza: ", "Garniture: ", "Configuration: "];//Structure d'affichage
             let elements =
                 [vue.pizza_id, vue.p_nom, vue.g_nom, vue.quantité + ", " + vue.emplacement ];//Éléments a afficher

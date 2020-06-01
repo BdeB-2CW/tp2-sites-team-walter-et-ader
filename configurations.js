@@ -30,7 +30,6 @@ fetch(URL)
       let noms = ["Garnitures: ", "Emplacement: ", "Quantité :"]//Structure d'affichage
       let elements = [piz_vue.g_nom, piz_vue.emplacement, piz_vue.quantité]//Éléments a afficher
       if (piz_vue.pizza_id === pizzaID) {//Test avec un seul id de pizza
-        alert(Number(piz_vue.config_id));
         setCookie("configuration"+chiffre, piz_vue.config_id);
         chiffre++;
         imgPizza.src = `${piz_vue.source_image}`;
@@ -67,10 +66,6 @@ function choixConfig(choix) {
   commande_rec.commande_id = commandeID;
   commande_rec.configuration_config_id = readCookie(configurations[choix]);
 
-  // commande_rec.membre_membre_id = 420;
-  // commande_rec.commande_id = 454;//Génère une id aleatoire;
-  // commande_rec.configuration_config_id = 518;
-
   const URL2 =
     "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/commande/"
 
@@ -90,5 +85,6 @@ function choixConfig(choix) {
     });
 
     setCookie("commande ID", commandeID);
+    setCookie("config ID", readCookie(configurations[choix]));
     setTimeout(function(){window.location.href = 'commande.html';}, 1000);
 }
