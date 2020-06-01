@@ -19,20 +19,37 @@ fetch(URL)
         return vue.map(function (vue) {
             let nom_elements = ["Pizza: ", "Garniture: ", "Configuration: "];//Structure d'affichage
             let elements =
-                [vue.pizza_id, vue.g_nom, vue.emplacement, vue.quantité];//Éléments a afficher
+                [vue.pizza_id, vue.p_nom, vue.g_nom, vue.quantité];//Éléments a afficher
 
             numero = createNode("span");
-            const URL =
+            const URL2 =
                 "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/commande/"
-            fetch(URL)
+            fetch(URL2)
                 .then((resp) => resp.json())
                 .then(function (data) {
                     let commande = data.items; //Resultats
                     return commande.map(function (commande) {
-                        if (document.getCookie(0) == commande.membre_membre_id) {
-                            numero.innerHTML = commande.commande_id;//Retourne l'id commande correspondant a l'id du membre
-                        }
+                        if(commande.commande_id == readCookie("config ID")){
+                            numero.innerHTML = `${readCookie("Membre ID")}`;//Retourne l'id commande correspondant a l'id du membre
                         append(id, numero);
+
+                        for (var i = 1; i < elements.length; i++) {
+                            let elementCourant = elements[i];
+                            let li = createNode("li"),
+                                p = createNode("p");
+                            img = createNode("img");
+            
+                            img.src = "images/line2.png";
+                            img.style = "width: 400%; height: 1px";
+                            img.alt = "Ligne Horizonatle";
+                            p.style = "font-size: 30px; margin-bottom: 1px";
+                            p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;//Répartit les éléments a afficher
+            
+                            append(li, p);
+                            append(li, img);
+                            append(ul, li);
+                        }
+                    }
                     });
                 })
                 .catch(function (error) {
@@ -40,23 +57,8 @@ fetch(URL)
                 });
 
 
-            for (var i = 1; i < elements.length - 1; i++) {
-                let elementCourant = elements[i];
-                let li = createNode("li"),
-                    p = createNode("p");
-                img = createNode("img");
 
-                img.src = "images/line2.png";
-                img.style = "width: 400%; height: 1px";
-                img.alt = "Ligne Horizonatle";
-                p.style = "font-size: 30px; margin-bottom: 1px";
-                p.innerHTML = nom_elements[i - 1] + `${elementCourant}`;//Répartit les éléments a afficher
-
-                append(li, p);
-                append(li, img);
-                append(ul, li);
-            }
-
+        
         });
     })
     .catch(function (error) {

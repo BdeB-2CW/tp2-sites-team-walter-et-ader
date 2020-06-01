@@ -2,11 +2,6 @@
  * Script des cookies
  *
  */
-
-function okCookie(email, membre_id,nom) {//Génère cookie
-    document.cookie = membre_id + ";" + email + ";"+ nom;
-}
-
 function setCookie(name,value) {//Génère cookie
 	document.cookie = name+"="+value+""+"; path=/";
 }
@@ -35,11 +30,5 @@ url = url.substring(url.length - 10, url.length);
 if(url != "login.html" && readCookie("Membre ID") == null){
     alert("Veuillez vous enregistrer avant de continuer.");
     window.location.href = "./login.html";
-try {
-    readCookie("Membre ID");
-  } catch (error) {
-    console.error(error);
-
-  }
-}                
+  }                
                 

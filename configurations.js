@@ -30,7 +30,8 @@ fetch(URL)
       let noms = ["Garnitures: ", "Emplacement: ", "Quantité :"]//Structure d'affichage
       let elements = [piz_vue.g_nom, piz_vue.emplacement, piz_vue.quantité]//Éléments a afficher
       if (piz_vue.pizza_id === pizzaID) {//Test avec un seul id de pizza
-        document.setCookie() = piz_vue.config_id + ";" + config_id + 1;
+        setCookie("configuration1", piz_vue.config_id);
+        setCookie("configuration2", piz_vue.config_id + 1);
         imgPizza.src = `${piz_vue.source_image}`;
         nomPizza.innerHTML = `${piz_vue.p_nom}`;
         for (var i = 0; i < noms.length; i++) {
@@ -55,26 +56,18 @@ fetch(URL)
 
 
 
-function genericName(number) {
-
-
-
-  let configID;
-  let commande_rec = {};
-
-alert(config_id1);
-if(boolean){//Détermine le config_id a donner a l'entrée de commande
-  configID = config_id1;
-} else {
-  configID = config_id2;
-}
-let commande_rec = {};//Créé une entrée commande
+function choixConfig(choix) {
+  let configurations = ["configuration1", "configuration2"];
+  let commande_rec = {};//Créé une entrée commande
+  let commandeID = Math.floor((Math.random() * 9998) + 1);//Génère une id aleatoire;
 
   commande_rec.membre_membre_id = 420;
-  commande_rec.commande_id = 20;
-  commande_rec.configuration_config_id = number;
+  commande_rec.commande_id = commandeID;
+  commande_rec.configuration_config_id = readCookie(configurations[choix]);
 
-
+  // commande_rec.membre_membre_id = 420;
+  // commande_rec.commande_id = 454;//Génère une id aleatoire;
+  // commande_rec.configuration_config_id = 518;
 
   const URL2 =
     "https://dkearjhlg7gwib7-db202005071430.adb.ca-montreal-1.oraclecloudapps.com/ords/wtp2/commande/"
@@ -93,4 +86,7 @@ let commande_rec = {};//Créé une entrée commande
     .catch(function (error) {
       console.log(JSON.stringify(error));
     });
+
+    setCookie("config ID", commandeID);
+    setTimeout(function(){window.location.href = 'commande.html';}, 1000);
 }
