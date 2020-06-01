@@ -12,7 +12,7 @@ function ins_membre() {
   membr_rec.ville = document.getElementById("ville").value;
   membr_rec.email = document.getElementById("email").value;
   membr_rec.mot_de_passe = document.getElementById("mdp").value;
-  setCookie(membr_rec.email, membr_rec.membre_id,membr_rec.nom);//Crée un cookie contenant l'address courriel et l'id du membre
+  setCookie("Membre ID", membr_rec.membre_id);//Crée un cookie contenant l'address courriel et l'id du membre
   //Afficher un message d'alerte si une des cases sont vides, sinon, envoie les données vers la BD
   if (membr_rec.nom === "" || membr_rec.prenom === "" || membr_rec.Ville === "" || membr_rec.email === "" || membr_rec.mot_de_passe === "") {
     alert("Veuillez bien remplir les cases!!");
@@ -36,4 +36,6 @@ function ins_membre() {
         console.log(JSON.stringify(error));
       });
   }
+
+  setTimeout(function(){window.location.href = 'Menu.html';}, 1000);
 } 

@@ -24,15 +24,15 @@ fetch(URL)
   .then((resp) => resp.json())
   .then(function (data) {
     let piz_vue = data.items; //Résultats
-    config_id1 = piz_vue.config_id;
-    config_id2 = config_id1 + 1;//Prend 2 id
-    return piz_vue.map(function (pizza) {
-
+    let pizzaID = 685;//Test avec un seul id de pizza
+    
+    return piz_vue.map(function (piz_vue) {
       let noms = ["Garnitures: ", "Emplacement: ", "Quantité :"]//Structure d'affichage
-      let elements = [pizza.g_nom, pizza.emplacement, pizza.quantité]//Éléments a afficher
-      if (pizza.pizza_id === 685) {//Test avec un seul id de pizza
-        imgPizza.src = `${pizza.source_image}`;
-        nomPizza.innerHTML = `${pizza.p_nom}`;
+      let elements = [piz_vue.g_nom, piz_vue.emplacement, piz_vue.quantité]//Éléments a afficher
+      if (piz_vue.pizza_id === pizzaID) {//Test avec un seul id de pizza
+        document.setCookie() = piz_vue.config_id + ";" + config_id + 1;
+        imgPizza.src = `${piz_vue.source_image}`;
+        nomPizza.innerHTML = `${piz_vue.p_nom}`;
         for (var i = 0; i < noms.length; i++) {
           li = createNode("li");
           h2 = createNode("h2");
@@ -51,13 +51,12 @@ fetch(URL)
     console.log(JSON.stringify(error));
   });
 
-config_id1 = 1;
-config_id2 = 2;
+
 
 
 
 function genericName(number) {
-  alert('Bon');
+
 
 
   let configID;

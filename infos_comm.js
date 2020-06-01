@@ -29,7 +29,7 @@ fetch(URL)
                 .then(function (data) {
                     let commande = data.items; //Resultats
                     return commande.map(function (commande) {
-                        if (document.getCookie() == commande.membre_membre_id) {
+                        if (document.getCookie(0) == commande.membre_membre_id) {
                             numero.innerHTML = commande.commande_id;//Retourne l'id commande correspondant a l'id du membre
                         }
                         append(id, numero);
