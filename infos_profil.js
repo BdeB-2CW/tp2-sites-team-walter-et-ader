@@ -23,10 +23,11 @@ fetch(URL)
     let membres = data.items; //Résultat
     return membres.map(function (membres) {
       let nom_elements = ["Nom: ", "Prénom: ", "Ville: ", "Email: ", "Mot de passe: "];
+    
       let elements =
         [membres.membre_id, membres.nom, membres.prenom, membres.ville, membres.email, membres.mot_de_passe, membres.points];
 
-      if (membres.membre_id === 420) {
+      if (membres.membre_id === Number(readCookie("Membre ID"))) {
         pointage = createNode("span");
         pointage.innerHTML = membres.points;//Retourne le pointage associé a l'id membre
         append(pts, pointage);

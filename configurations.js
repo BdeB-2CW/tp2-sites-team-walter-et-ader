@@ -25,13 +25,14 @@ fetch(URL)
   .then(function (data) {
     let piz_vue = data.items; //Résultats
     let pizzaID = 685;//Test avec un seul id de pizza
-    
+    let chiffre = 1;
     return piz_vue.map(function (piz_vue) {
       let noms = ["Garnitures: ", "Emplacement: ", "Quantité :"]//Structure d'affichage
       let elements = [piz_vue.g_nom, piz_vue.emplacement, piz_vue.quantité]//Éléments a afficher
       if (piz_vue.pizza_id === pizzaID) {//Test avec un seul id de pizza
-        setCookie("configuration1", piz_vue.config_id);
-        setCookie("configuration2", piz_vue.config_id + 1);
+        alert(Number(piz_vue.config_id));
+        setCookie("configuration"+chiffre, piz_vue.config_id);
+        chiffre++;
         imgPizza.src = `${piz_vue.source_image}`;
         nomPizza.innerHTML = `${piz_vue.p_nom}`;
         for (var i = 0; i < noms.length; i++) {
@@ -44,6 +45,7 @@ fetch(URL)
           append(conf, li);
         }
 
+        
         conf = document.getElementById("conf2");
       }
     });
@@ -87,6 +89,6 @@ function choixConfig(choix) {
       console.log(JSON.stringify(error));
     });
 
-    setCookie("config ID", commandeID);
+    setCookie("commande ID", commandeID);
     setTimeout(function(){window.location.href = 'commande.html';}, 1000);
 }
